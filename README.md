@@ -9,8 +9,23 @@ Only getting battery level for now. Maybe I'll add more features in the future? 
 ## Downloads
 Head to the release. At the moment only Windows binaries are available.
 
-## Run
-Just double click on the binary to run it. Alternatively, run from a terminal window.
+## Usage
+Run the program from a terminal window.
+Here's the help options:
+
+```bash
+arctis-rs 0.1.1
+A small utility to query Arctis battery
+
+USAGE:
+    arctis-rs.exe [FLAGS]
+
+FLAGS:
+    -b, --battery    Query the battery level
+    -h, --help       Prints help information
+    -l, --list       Get the device list
+    -V, --version    Prints version information
+```
 
 ## Contribute 
 If you want to contribute to this, it's really simple.
