@@ -36,5 +36,11 @@ Then, clone this repository and build with `cargo`: `cargo build`.
 
 Run the program with `cargo run`.
 
+``` bash
+git clone https://github.com/tk-nguyen/arctis-rs
+cd arctis-rs/
+cargo build && cargo run
+```
+
 If you have any problem, please report it in the issues! I'll try to get back to you as soon as possible.
 
