@@ -1,10 +1,10 @@
 [package]
 name = "arctis-rs"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Nguyen Thai"]
 edition = "2018"
 
 [dependencies]
 hidapi = "1.2.6"
 structopt = "0.3.21"
-serde_json = "1.0"
+serde_json = "1.0.64"

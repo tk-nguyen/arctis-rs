@@ -24,5 +24,7 @@ fn main() {
         get_battery(api);
     } else if options.list {
         get_devices_list(api)
+    } else {
+        ArctisOpt::clap().print_help().unwrap();
     }
 }
