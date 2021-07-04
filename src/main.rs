@@ -20,10 +20,13 @@ fn main() {
     let options = ArctisOpt::from_args();
     // Create a new API to query all available devices
     let api = HidApi::new().unwrap();
-    if options.battery {
-        get_battery(api);
+    if options.battery && options.list {
+        get_devices_list(&api);
+        get_battery(&api);
+    } else if options.battery {
+        get_battery(&api);
     } else if options.list {
-        get_devices_list(api)
+        get_devices_list(&api)
     } else {
         ArctisOpt::clap().print_help().unwrap();
     }
