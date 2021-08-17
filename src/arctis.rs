@@ -57,6 +57,7 @@ pub fn get_battery(api: &HidApi) {
                 "Your {} battery is at {}% (Did you turn on the headset?)",
                 key, val
             ),
+            97 => println!("Your {} battery is at {}% (You might need to disconnect and reconnect the cable if you're charging).", key, val),
             _ => println!("Your {} battery is at {}%", key, val),
         }
     }
