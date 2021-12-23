@@ -39,7 +39,7 @@ pub fn get_battery(api: &HidApi) {
             // If the write succeeds, it returns number of bytes written
             match handle.write(&payload) {
                 Ok(_b) => {
-                    // The device should return report id and battery level when rea
+                    // The device should return report id and battery level when read
                     handle.read(&mut buf).unwrap();
                     devices_battery.insert(
                         handle.get_product_string().unwrap().unwrap(),
