@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>README.html</title>
+<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" media="all" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css"  />
+<link rel="stylesheet" type="text/css" media="all" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/github.min.css"  /><meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'><style> body { box-sizing: border-box; max-width: 740px; width: 100%; margin: 40px auto; padding: 0 10px; } </style><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'></script><script src='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js'></script><script>document.addEventListener('DOMContentLoaded', () => { document.body.classList.add('markdown-body'); document.querySelectorAll('pre[lang] > code').forEach((code) => { code.classList.add(code.parentElement.lang); }); document.querySelectorAll('pre > code').forEach((code) => { hljs.highlightBlock(code); }); });</script>
+</head>
+
+<body>
+
+<h1 id="arctis-rs">arctis-rs</h1>
+<p>A small utility to query your Arctis device battery level, written in
+Rust.</p>
+<p>The SteelSeries Engine does not show the battery level in numbers,
+only the icon so I wrote this to get more details. Also to practice my
+Rust 😀.</p>
+<h2 id="features">Features</h2>
+<p>Only getting battery level for now. Maybe I’ll add more features in
+the future? ¯\_(ツ)_/¯​</p>
+<h2 id="downloads">Downloads</h2>
+<p>Head to the release. At the moment only Windows binaries are
+available.</p>
+<h2 id="usage">Usage</h2>
+<p>Run the program from a terminal window. Here’s the help options:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">arctis-rs</span> 0.1.1</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">A</span> small utility to query Arctis battery</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">USAGE:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">arctis-rs.exe</span> [FLAGS]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">FLAGS:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-b,</span> <span class="at">--battery</span>    Query the battery level</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-h,</span> <span class="at">--help</span>       Prints help information</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-l,</span> <span class="at">--list</span>       Get the device list</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-V,</span> <span class="at">--version</span>    Prints version information</span></code></pre></div>
+<h2 id="contribute">Contribute</h2>
+<p>If you want to contribute to this, it’s really simple.</p>
+<ul>
+<li><p>First, download rust from https://rustup.rs/ (If you’re on
+Windows you have to install the VS Build Tools too, the installer will
+tell you how).</p></li>
+<li><p>Then, clone this repository and build with <code>cargo</code>:
+<code>cargo build</code>.</p></li>
+<li><p>Run the program with <code>cargo run</code>.</p></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/tk-nguyen/arctis-rs</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> arctis-rs/</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build <span class="kw">&amp;&amp;</span> <span class="ex">cargo</span> run</span></code></pre></div>
+<p>If you have any problem, please report it in the issues! I’ll try to
+get back to you as soon as possible.</p>
+
+</body>
+</html>

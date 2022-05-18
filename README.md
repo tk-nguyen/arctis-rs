@@ -30,11 +30,11 @@ FLAGS:
 ## Contribute 
 If you want to contribute to this, it's really simple.
 
-First, download rust from https://rustup.rs/ (If you're on Windows you have to install the VS Build Tools too, the installer will tell you how).
+- First, download rust from https://rustup.rs/ (If you're on Windows you have to install the VS Build Tools too, the installer will tell you how).
 
-Then, clone this repository and build with `cargo`: `cargo build`.
+- Then, clone this repository and build with `cargo`: `cargo build`.
 
-Run the program with `cargo run`.
+- Run the program with `cargo run`.
 
 ``` bash
 git clone https://github.com/tk-nguyen/arctis-rs
