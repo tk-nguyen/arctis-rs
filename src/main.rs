@@ -1,26 +1,32 @@
 use arctis::*;
-use color_eyre::eyre::{Result, WrapErr};
+use clap::{ArgGroup, Parser};
+use color_eyre::eyre::{eyre, Result, WrapErr};
 use hidapi::HidApi;
-use structopt::StructOpt;
 
 mod arctis;
 
-#[derive(Debug, StructOpt)]
-#[structopt(name = "arctis-rs", about = "A small utility to query Arctis battery")]
+#[derive(Parser)]
+#[command(
+    name = "arctis-rs",
+    author = clap::crate_authors!(),
+    version,
+    about = "A small utility to query Arctis battery"
+)]
+#[command(group = ArgGroup::new("query").args(["battery", "list"]).multiple(true).required(true))]
 struct ArctisOpt {
     /// Query the battery level
-    #[structopt(short, long)]
+    #[arg(short, long)]
     battery: bool,
 
     /// Get the device list
-    #[structopt(short, long)]
+    #[arg(short, long)]
     list: bool,
 }
 
 fn main() -> Result<()> {
-    let options = ArctisOpt::from_args();
+    let options = ArctisOpt::parse();
     // Create a new API to query all available devices
-    let api = HidApi::new().wrap_err("Can't connect to the devices.")?;
+    let api = HidApi::new().wrap_err("Can't connect to your Steelseries devices.")?;
     match options {
         ArctisOpt {
             battery: true,
@@ -30,14 +36,14 @@ fn main() -> Result<()> {
             get_battery(api)?;
         }
         ArctisOpt {
-            battery: true,
-            list: false,
-        } => get_battery(api)?,
-        ArctisOpt {
             battery: false,
             list: true,
         } => get_devices_list(&api)?,
-        _ => ArctisOpt::clap().print_help().unwrap(),
+        ArctisOpt {
+            battery: true,
+            list: false,
+        } => get_battery(api)?,
+        _ => Err(eyre!("An error occured when running the program!"))?, // This should not be reachable!
     }
     Ok(())
 }

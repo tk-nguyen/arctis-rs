@@ -3,7 +3,6 @@ use color_eyre::{
     owo_colors::OwoColorize,
 };
 use hidapi::{DeviceInfo, HidApi};
-use serde_json::json;
 
 use std::collections::HashMap;
 
@@ -93,12 +92,20 @@ pub fn get_devices_list(api: &HidApi) -> Result<()> {
         .map(|d| d.to_owned())
         .collect::<Vec<DeviceInfo>>();
     for device in arctis {
-        let output = json!({
-            "Manufacturer": device.manufacturer_string().unwrap().trim(),
-            "Product": device.product_string().unwrap().trim(),
-            "Path": device.path().to_str().unwrap().trim(),
-        });
-        println!("{:#}", output);
+        println!(
+            "Manufacturer: {}\nName: {}\nPath: {}\n",
+            device
+                .manufacturer_string()
+                .unwrap_or("Unavailable")
+                .trim()
+                .cyan(),
+            device
+                .product_string()
+                .unwrap_or("Unavailable")
+                .trim()
+                .cyan(),
+            device.path().to_string_lossy().trim().cyan()
+        )
     }
     Ok(())
 }
