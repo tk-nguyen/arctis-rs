@@ -1,6 +1,6 @@
 [package]
 name = "arctis-rs"
-version = "0.1.5"
+version = "0.1.6"
 authors = ["Nguyen Thai"]
 edition = "2018"
 
