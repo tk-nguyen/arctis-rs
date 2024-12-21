@@ -1,10 +1,13 @@
 [package]
 name = "arctis-rs"
-version = "0.1.6"
+version = "0.1.7"
 authors = ["Nguyen Thai"]
 edition = "2018"
 
 [dependencies]
-hidapi = "1.2.6"
+hidapi = "2.6"
 color-eyre = { version = "0.6", default-features = false }
-clap = { version = "4.1.4", features = ["derive", "wrap_help", "cargo"] }
+clap = { version = "4.5", features = ["derive", "wrap_help", "cargo"] }
+
+[profile.release]
+strip = true
