@@ -1,8 +1,8 @@
 [package]
 name = "arctis-rs"
-version = "0.1.7"
+version = "0.1.8"
 authors = ["Nguyen Thai"]
-edition = "2018"
+edition = "2024"
 
 [dependencies]
 hidapi = "2.6"
